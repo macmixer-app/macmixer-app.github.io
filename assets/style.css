@@ -52,7 +52,8 @@ header.top nav a { color: var(--muted); text-decoration: none; margin-left: 18px
 header.top nav a:hover { color: var(--text); }
 
 .hero { text-align: center; padding: 48px 0 32px; }
-.hero img { width: 152px; height: 152px; }
+.hero img.hero-icon { width: 88px; height: 88px; }
+.hero .eyebrow { margin: 10px 0 0; color: var(--accent); font-weight: 600; font-size: 15px; letter-spacing: 0.01em; }
 .hero h1 { font-size: 44px; line-height: 1.1; margin: 12px 0 10px; letter-spacing: -0.02em; }
 .hero p.lead { font-size: 21px; color: var(--muted); max-width: 620px; margin: 0 auto; }
 
@@ -64,7 +65,10 @@ header.top nav a:hover { color: var(--text); }
 .button.primary { background: var(--accent); color: var(--on-accent); }
 .button.primary:hover { background: var(--accent-strong); }
 .button.secondary { background: var(--surface); color: var(--text); border-color: var(--line); }
-.button.disabled { opacity: 0.55; pointer-events: none; }
+.button.large { padding: 14px 28px; font-size: 18px; }
+.button.disabled {
+  background: transparent; color: var(--muted); border: 1px dashed var(--line); pointer-events: none;
+}
 .note { text-align: center; color: var(--muted); font-size: 14px; }
 
 section { padding: 36px 0; border-top: 1px solid var(--line); }
@@ -107,4 +111,55 @@ footer nav a { color: var(--muted); margin-right: 16px; }
   .hero h1 { font-size: 34px; }
   .hero p.lead { font-size: 18px; }
   header.top nav a { margin-left: 12px; }
+}
+
+header.top .right { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; justify-content: flex-end; }
+header.top nav.lang { display: flex; gap: 2px; padding: 2px; border: 1px solid var(--line); border-radius: 999px; }
+header.top nav.lang a {
+  margin: 0; padding: 2px 9px; border-radius: 999px; font-size: 13px; font-weight: 600; color: var(--muted);
+}
+header.top nav.lang a[aria-current="true"] { background: var(--accent-soft); color: var(--text); }
+.doc .translation-note { color: var(--muted); font-size: 14px; border-left: 3px solid var(--line); padding-left: 10px; }
+
+@media (max-width: 560px) {
+  header.top { align-items: flex-start; }
+  header.top nav.sections { display: none; }
+}
+
+.hero .buy-link { margin: 10px 0 0; font-size: 15px; }
+.hero .microcopy { margin: 18px auto 0; color: var(--muted); font-size: 14px; max-width: 560px; }
+.hero ul.badges { list-style: none; padding: 0; margin: 14px 0 0; display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+.hero ul.badges li {
+  font-size: 13px; color: var(--muted); background: var(--surface); border: 1px solid var(--line);
+  border-radius: 999px; padding: 4px 12px;
+}
+.hero ul.badges li::before { content: "✓ "; color: var(--accent); font-weight: 700; }
+.hero img.screenshot {
+  display: block; width: 100%; max-width: 760px; height: auto; margin: 36px auto 0;
+  border-radius: 14px; box-shadow: 0 18px 50px rgba(20, 8, 50, 0.35);
+}
+.mobile-only { display: none; }
+html.is-mobile .desktop-only { display: none; }
+html.is-mobile .mobile-only { display: block; margin-top: 24px; }
+.mobile-text { color: var(--muted); margin: 0 0 12px; }
+
+ol.steps { list-style: none; counter-reset: step; padding: 0; margin: 0; display: grid; gap: 12px; }
+ol.steps li {
+  counter-increment: step; position: relative; padding: 14px 18px 14px 58px;
+  background: var(--surface); border: 1px solid var(--line); border-radius: 14px;
+}
+ol.steps li::before {
+  content: counter(step); position: absolute; left: 16px; top: 50%; transform: translateY(-50%);
+  width: 28px; height: 28px; border-radius: 50%; background: var(--accent-soft); color: var(--accent);
+  font-weight: 700; display: grid; place-items: center; font-size: 15px;
+}
+
+.price .tagline { margin: 2px 0 0; color: var(--muted); }
+.price ul { text-align: left; display: inline-block; }
+.price ul li { padding-left: 1.6em; text-indent: -1.6em; }
+.price ul li::before { content: "✓"; color: var(--accent); font-weight: 700; display: inline-block; width: 1.6em; text-indent: 0; }
+.price .try-first { margin: 14px 0 0; font-size: 15px; }
+footer span { max-width: 560px; }
+@media (max-width: 560px) {
+  .price .amount small { display: block; }
 }

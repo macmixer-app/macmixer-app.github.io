@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MacMixer – Volumen por app y por pestaña en tu Mac</title>
+  <meta name="description" content="Ajusta el volumen de cada app y de cada pestaña del navegador en tu Mac, desde la barra de menús, como el mezclador de volumen de Windows. 7 días gratis, después US$9.99 una vez.">
+  <link rel="canonical" href="https://macmixer-app.github.io/es/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="MacMixer">
+  <meta property="og:title" content="MacMixer – Volumen por app y por pestaña en tu Mac">
+  <meta property="og:description" content="Ajusta el volumen de cada app y de cada pestaña del navegador en tu Mac, desde la barra de menús, como el mezclador de volumen de Windows. 7 días gratis, después US$9.99 una vez.">
+  <meta property="og:url" content="https://macmixer-app.github.io/es/">
+  <meta property="og:image" content="https://macmixer-app.github.io/assets/og-es.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="es_ES">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="alternate" hreflang="en" href="https://macmixer-app.github.io/">
+  <link rel="alternate" hreflang="pt-BR" href="https://macmixer-app.github.io/pt/">
+  <link rel="alternate" hreflang="es" href="https://macmixer-app.github.io/es/">
+  <link rel="alternate" hreflang="x-default" href="https://macmixer-app.github.io/">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="../assets/favicon-64.png">
+  <link rel="apple-touch-icon" href="../assets/icon-512.png">
+  <link rel="stylesheet" href="../assets/style.css">
+  
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "MacMixer",
+    "operatingSystem": "macOS 15 or later", "applicationCategory": "UtilitiesApplication", "inLanguage": "es",
+    "description": "Ajusta el volumen de cada app y de cada pestaña del navegador en tu Mac, desde la barra de menús, como el mezclador de volumen de Windows. 7 días gratis, después US$9.99 una vez.", "url": "https://macmixer-app.github.io/es/",
+    "offers": {"@type": "Offer", "price": "9.99", "priceCurrency": "USD"}}</script>
+  <script>
+    // Celular ou iPad não instalam o app: o botão principal vira "enviar para o meu Mac".
+    if (/iPhone|iPod|Android/i.test(navigator.userAgent) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1)) {
+      document.documentElement.classList.add("is-mobile");
+    }
+    document.addEventListener("DOMContentLoaded", function () {
+      var send = document.getElementById("send-to-mac");
+      if (send && navigator.share) {
+        send.addEventListener("click", function (event) {
+          event.preventDefault();
+          navigator.share({ title: "Probar MacMixer en mi Mac", url: "https://macmixer-app.github.io/es/?ref=mobile" }).catch(function () {});
+        });
+      }
+    });
+  </script>
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <a class="brand" href="../es/"><img src="../assets/favicon-64.png" alt="">MacMixer</a>
+      <div class="right">
+        <nav class="sections"><a href="#features">Funciones</a><a href="#pricing">Precio</a><a href="#faq">Preguntas</a></nav>
+        <nav class="lang" aria-label="Language"><a href="../" data-lang="en" hreflang="en">EN</a><a href="../pt/" data-lang="pt" hreflang="pt-BR">PT</a><a href="../es/" data-lang="es" hreflang="es" aria-current="true">ES</a></nav>
+      </div>
+    </header>
+
+    <div class="hero" id="top">
+      <img class="hero-icon" src="../assets/icon-512.png" alt="">
+      <p class="eyebrow">App de la barra de menús para macOS 15+</p>
+      <h1>Un mezclador de volumen para cada app y cada pestaña de tu Mac</h1>
+      <p class="lead">Baja esa pestaña ruidosa de YouTube sin tocar tu llamada de Zoom. MacMixer le da a cada app y a cada pestaña su propio control, en la barra de menús, como el mezclador de volumen de Windows.</p>
+      <div class="actions desktop-only">
+        <a class="button primary large disabled" href="../MacMixer.dmg" aria-disabled="true">Probar gratis 7 días — próximamente</a>
+      </div>
+      <p class="buy-link desktop-only"><a href="#pricing">o cómpralo ya por US$9.99</a></p>
+      <div class="mobile-only">
+        <p class="mobile-text">MacMixer funciona en tu Mac. Envíate el enlace y pruébalo allí.</p>
+        <a class="button primary large" id="send-to-mac" href="mailto:?subject=Probar%20MacMixer%20en%20mi%20Mac&amp;body=https%3A%2F%2Fmacmixer-app.github.io%2Fes%2F%3Fref%3Dmobile">Enviar a mi Mac</a>
+      </div>
+      <p class="microcopy">7 días gratis · Sin cuenta ni tarjeta · Después, US$9.99 una sola vez, sin suscripción</p>
+      <ul class="badges"><li>Notarizado por Apple</li><li>El audio no sale de tu Mac</li><li>Apple Silicon e Intel</li><li>Reembolso en 14 días</li></ul>
+      <img class="screenshot" src="../assets/screenshot-pt.png" alt="Panel de MacMixer con un control de volumen para cada app y pestaña del navegador" width="1124" height="564">
+    </div>
+
+    <section id="features">
+      <h2>Volumen por app y por pestaña, en la barra de menús</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Volumen por app</h3>
+          <p>Un control deslizante y un botón de silencio para cada app que está reproduciendo sonido: música, llamadas, juegos, videos.</p>
+        </div>
+        <div class="card">
+          <h3>Volumen por pestaña</h3>
+          <p>Con la extensión gratuita, cada pestaña de Chrome, Arc o Safari tiene su propio control. Baja una pestaña ruidosa sin tocar tu llamada.</p>
+        </div>
+        <div class="card">
+          <h3>Recuerda tus niveles</h3>
+          <p>Cada app vuelve con el volumen que elegiste la próxima vez que suene. MacMixer se abre con tu Mac y se queda en la barra de menús.</p>
+        </div>
+        <div class="card">
+          <h3>Solo toca lo que cambias</h3>
+          <p>Las apps que dejas al 100% suenan exactamente igual que antes. El volumen del navegador funciona como tope de sus pestañas, y los sonidos del sistema quedan en su propia sección.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="start">
+      <h2>Empieza en 3 pasos</h2>
+      <ol class="steps">
+        <li>Descarga MacMixer y arrástralo a la carpeta Aplicaciones.</li>
+        <li>Ábrelo y haz clic en el icono de MacMixer en la barra de menús.</li>
+        <li>Mueve un control. La primera vez, macOS pide permiso para capturar el audio: haz clic en Permitir.</li>
+      </ol>
+    </section>
+
+    <section id="privacy">
+      <h2>Seguro y privado</h2>
+      <p>macOS pide permiso para capturar el audio la primera vez que cambias un volumen. Así es como Apple permite que una app ajuste el sonido de otra: MacMixer lo procesa en tiempo real, en tu Mac. No se graba, guarda ni envía nada.</p>
+      <p>No hay driver de audio ni extensión del sistema que instalar, ni cuenta, estadísticas de uso o anuncios. La app solo se conecta a internet para verificar tu licencia y buscar actualizaciones.</p>
+    </section>
+
+    <section id="pricing">
+      <h2>Precio</h2>
+      <div class="price">
+        <div class="amount">US$9.99 <small>pago único</small></div>
+        <p class="tagline">Paga una vez, úsalo para siempre.</p>
+        <ul>
+          <li>Licencia de por vida, sin suscripción</li>
+          <li>Úsala en hasta 2 Macs</li>
+          <li>Incluye las actualizaciones de la versión principal actual</li>
+          <li>Prueba todo gratis durante 7 días</li>
+          <li>Garantía de reembolso de 14 días</li>
+        </ul>
+        <a class="button primary disabled" href="#" aria-disabled="true">Comprar MacMixer – US$9.99 — próximamente</a>
+        <p class="try-first"><a href="#top">¿Aún no lo tienes claro? Pruébalo gratis 7 días</a></p>
+      </div>
+      <p class="note">Los pagos los procesa Dodo Payments, nuestro Merchant of Record, que se encarga de los impuestos sobre las ventas.</p>
+    </section>
+
+    <section id="faq">
+      <h2>Preguntas frecuentes</h2>
+      <details>
+        <summary>¿Por qué macOS pide permiso de audio?</summary>
+        <p>Para cambiar el volumen de una app, MacMixer pasa el sonido de esa app por su propio control de volumen, y macOS exige tu permiso para eso. El sonido se procesa en tiempo real en tu Mac. No se graba, guarda ni envía nada.</p>
+      </details>
+      <details>
+        <summary>¿Es seguro MacMixer?</summary>
+        <p>Sí. Está firmado y notarizado por Apple, usa las APIs de audio de la propia Apple y no instala drivers ni extensiones del sistema. No hay cuenta, y tu audio nunca sale de tu Mac.</p>
+      </details>
+      <details>
+        <summary>¿Cómo funciona la prueba gratis?</summary>
+        <p>Descarga MacMixer y usa todas las funciones durante 7 días, sin datos de pago. Cuando la prueba termina, la app deja de ajustar los volúmenes y todo el sonido vuelve a la normalidad hasta que actives una licencia.</p>
+      </details>
+      <details>
+        <summary>¿Cómo activo mi licencia?</summary>
+        <p>Después de comprar, la clave de licencia te llega por correo. Abre MacMixer › Ajustes › Licencia, pega la clave y haz clic en Activar. Para pasarla a otro Mac, desactívala en el Mac actual.</p>
+      </details>
+      <details>
+        <summary>¿Necesito la extensión del navegador?</summary>
+        <p>No. Sin ella, MacMixer controla cada navegador completo. Con ella, cada pestaña tiene su propio control. En Safari, la extensión viene con la app; en Chrome y Arc, se carga en un minuto con el modo de desarrollador, con los pasos en MacMixer › Ajustes.</p>
+      </details>
+      <details>
+        <summary>¿En qué se diferencia de SoundSource?</summary>
+        <p>SoundSource es una herramienta profesional con efectos, ecualizador, refuerzo de volumen y salida de audio por app. MacMixer hace una sola cosa: control de volumen simple para cada app y cada pestaña del navegador, por US$9.99. Si necesitas ecualizador y enrutamiento de audio, SoundSource es excelente; si solo quieres bajar el sonido de las cosas, MacMixer es más ligero y más barato.</p>
+      </details>
+      <details>
+        <summary>Hay alternativas gratis. ¿Por qué pagar?</summary>
+        <p>Algunas herramientas gratis son muy buenas. MacMixer añade volumen por pestaña en Chrome, Arc y Safari, funciona sin instalar un driver de audio virtual, recuerda el nivel de cada app y recibe actualizaciones automáticas. Pruébalo gratis 7 días y decide.</p>
+      </details>
+      <details>
+        <summary>¿Funciona sin conexión?</summary>
+        <p>Sí. MacMixer verifica tu licencia una vez al día cuando estás en línea y sigue funcionando hasta 30 días sin conexión.</p>
+      </details>
+      <details>
+        <summary>¿En qué idiomas está?</summary>
+        <p>MacMixer está en inglés, portugués y español, y sigue el idioma de tu Mac.</p>
+      </details>
+      <details>
+        <summary>¿Puedo pedir un reembolso?</summary>
+        <p>Sí, dentro de los 14 días posteriores a la compra. Consulta la <a href="refund.html">política de reembolso</a>.</p>
+      </details>
+    </section>
+
+    <footer>
+      <span>© 2026 MacMixer · Hecho por un desarrollador independiente en Brasil. · <a href="mailto:macmixer.app@gmail.com">macmixer.app@gmail.com</a></span>
+      <nav>
+        <a href="terms.html">Términos</a>
+        <a href="privacy.html">Privacidad</a>
+        <a href="refund.html">Reembolsos</a>
+      </nav>
+    </footer>
+  </div>
+  <script>
+    document.querySelectorAll("nav.lang a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        try { localStorage.setItem("lang", link.dataset.lang); } catch (e) {}
+      });
+    });
+  </script>
+</body>
+</html>

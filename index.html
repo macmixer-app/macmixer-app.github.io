@@ -3,38 +3,91 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>MacMixer: volume control for every app and browser tab on your Mac</title>
-  <meta name="description" content="MacMixer is a menu bar app for macOS that lets you set the volume of each app and each browser tab individually, like the Windows volume mixer.">
+  <title>MacMixer – Per-App & Browser Tab Volume Control for Mac</title>
+  <meta name="description" content="Set the volume of each app and each browser tab on your Mac, right from the menu bar, like the Windows volume mixer. Free 7-day trial, then $9.99 once.">
+  <link rel="canonical" href="https://macmixer-app.github.io/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="MacMixer">
+  <meta property="og:title" content="MacMixer – Per-App & Browser Tab Volume Control for Mac">
+  <meta property="og:description" content="Set the volume of each app and each browser tab on your Mac, right from the menu bar, like the Windows volume mixer. Free 7-day trial, then $9.99 once.">
+  <meta property="og:url" content="https://macmixer-app.github.io/">
+  <meta property="og:image" content="https://macmixer-app.github.io/assets/og-en.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="alternate" hreflang="en" href="https://macmixer-app.github.io/">
+  <link rel="alternate" hreflang="pt-BR" href="https://macmixer-app.github.io/pt/">
+  <link rel="alternate" hreflang="es" href="https://macmixer-app.github.io/es/">
+  <link rel="alternate" hreflang="x-default" href="https://macmixer-app.github.io/">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
   <link rel="icon" type="image/png" sizes="64x64" href="assets/favicon-64.png">
   <link rel="apple-touch-icon" href="assets/icon-512.png">
   <link rel="stylesheet" href="assets/style.css">
+  <script>
+    // Primeira visita: leva para o idioma do navegador; depois, vale o que a pessoa escolheu no seletor.
+    (function () {
+      var lang = null;
+      try { lang = localStorage.getItem("lang"); } catch (e) {}
+      if (!lang) {
+        var preferred = ((navigator.languages && navigator.languages[0]) || navigator.language || "").toLowerCase();
+        lang = preferred.indexOf("pt") === 0 ? "pt" : preferred.indexOf("es") === 0 ? "es" : "en";
+      }
+      if (lang === "pt" || lang === "es") {
+        location.replace("/" + lang + "/" + location.pathname.split("/").pop() + location.hash);
+      }
+    })();
+  </script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "MacMixer",
+    "operatingSystem": "macOS 15 or later", "applicationCategory": "UtilitiesApplication", "inLanguage": "en",
+    "description": "Set the volume of each app and each browser tab on your Mac, right from the menu bar, like the Windows volume mixer. Free 7-day trial, then $9.99 once.", "url": "https://macmixer-app.github.io/",
+    "offers": {"@type": "Offer", "price": "9.99", "priceCurrency": "USD"}}</script>
+  <script>
+    // Celular ou iPad não instalam o app: o botão principal vira "enviar para o meu Mac".
+    if (/iPhone|iPod|Android/i.test(navigator.userAgent) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1)) {
+      document.documentElement.classList.add("is-mobile");
+    }
+    document.addEventListener("DOMContentLoaded", function () {
+      var send = document.getElementById("send-to-mac");
+      if (send && navigator.share) {
+        send.addEventListener("click", function (event) {
+          event.preventDefault();
+          navigator.share({ title: "Try MacMixer on my Mac", url: "https://macmixer-app.github.io/?ref=mobile" }).catch(function () {});
+        });
+      }
+    });
+  </script>
 </head>
 <body>
   <div class="wrap">
     <header class="top">
       <a class="brand" href="./"><img src="assets/favicon-64.png" alt="">MacMixer</a>
-      <nav>
-        <a href="#features">Features</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#faq">FAQ</a>
-      </nav>
+      <div class="right">
+        <nav class="sections"><a href="#features">Features</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a></nav>
+        <nav class="lang" aria-label="Language"><a href="./" data-lang="en" hreflang="en" aria-current="true">EN</a><a href="pt/" data-lang="pt" hreflang="pt-BR">PT</a><a href="es/" data-lang="es" hreflang="es">ES</a></nav>
+      </div>
     </header>
 
-    <div class="hero">
-      <img src="assets/icon-512.png" alt="MacMixer icon">
-      <h1>A volume mixer for your Mac</h1>
-      <p class="lead">Set the volume of every app and every browser tab on its own, right from the menu bar. Like the Windows volume mixer, made for macOS.</p>
-      <div class="actions">
-        <!-- Botões ficam desativados até a primeira release (DMG em MacMixer.dmg) e o produto Live no Dodo. -->
-        <a class="button primary disabled" href="MacMixer.dmg" aria-disabled="true">Download free trial — coming soon</a>
-        <a class="button secondary" href="#pricing">$9.99, one-time</a>
+    <div class="hero" id="top">
+      <img class="hero-icon" src="assets/icon-512.png" alt="">
+      <p class="eyebrow">Menu bar app for macOS 15+</p>
+      <h1>A volume mixer for every app and browser tab on your Mac</h1>
+      <p class="lead">Turn down a loud YouTube tab without touching your Zoom call. MacMixer gives each app and each tab its own slider, right in the menu bar, like the Windows volume mixer.</p>
+      <div class="actions desktop-only">
+        <a class="button primary large disabled" href="MacMixer.dmg" aria-disabled="true">Try free for 7 days — coming soon</a>
       </div>
-      <p class="note">Free for 7 days. macOS 15 or later, Apple Silicon and Intel.</p>
+      <p class="buy-link desktop-only"><a href="#pricing">or buy now for $9.99</a></p>
+      <div class="mobile-only">
+        <p class="mobile-text">MacMixer runs on your Mac. Send yourself the link and try it there.</p>
+        <a class="button primary large" id="send-to-mac" href="mailto:?subject=Try%20MacMixer%20on%20my%20Mac&amp;body=https%3A%2F%2Fmacmixer-app.github.io%2F%3Fref%3Dmobile">Send to my Mac</a>
+      </div>
+      <p class="microcopy">Free 7-day trial · No account, no card · Then $9.99 once, no subscription</p>
+      <ul class="badges"><li>Notarized by Apple</li><li>Audio stays on your Mac</li><li>Apple Silicon & Intel</li><li>14-day refund</li></ul>
+      <img class="screenshot" src="assets/screenshot-pt.png" alt="MacMixer panel with a volume slider for each app and browser tab" width="1124" height="564">
     </div>
 
     <section id="features">
-      <h2>What it does</h2>
+      <h2>Per-app and per-tab volume, right in the menu bar</h2>
       <div class="grid">
         <div class="card">
           <h3>Volume per app</h3>
@@ -49,21 +102,32 @@
           <p>Each app keeps the volume you chose the next time it plays. MacMixer opens with your Mac and stays in the menu bar.</p>
         </div>
         <div class="card">
-          <h3>Stays out of the way</h3>
-          <p>Apps at 100% are never touched. The browser volume works as a ceiling for its tabs, and system sounds are tucked away in their own section.</p>
+          <h3>Only touches what you change</h3>
+          <p>Apps you leave at 100% play exactly as before. The browser volume works as a ceiling for its tabs, and system sounds are tucked into their own section.</p>
         </div>
       </div>
     </section>
 
+    <section id="start">
+      <h2>Get started in 3 steps</h2>
+      <ol class="steps">
+        <li>Download MacMixer and drag it to your Applications folder.</li>
+        <li>Open it and click the MacMixer icon in the menu bar.</li>
+        <li>Move a slider. The first time, macOS asks for permission to capture audio: click Allow.</li>
+      </ol>
+    </section>
+
     <section id="privacy">
-      <h2>Private by design</h2>
-      <p>Your audio never leaves your Mac. MacMixer adjusts the sound locally, and the browser extension only talks to the app on your own computer. There are no accounts, no analytics and no ads. The app only goes online to check your license and look for updates.</p>
+      <h2>Safe and private</h2>
+      <p>macOS asks for permission to capture audio the first time you change a volume. That's how Apple lets one app adjust another app's sound: MacMixer processes it in real time on your Mac. Nothing is recorded, stored or sent.</p>
+      <p>There's no audio driver or system extension to install, no account, no analytics and no ads. The app only goes online to check your license and look for updates.</p>
     </section>
 
     <section id="pricing">
       <h2>Pricing</h2>
       <div class="price">
         <div class="amount">$9.99 <small>one-time</small></div>
+        <p class="tagline">Pay once, use it forever.</p>
         <ul>
           <li>Lifetime license, no subscription</li>
           <li>Use it on up to 2 Macs</li>
@@ -71,14 +135,22 @@
           <li>Try everything free for 7 days first</li>
           <li>14-day money-back guarantee</li>
         </ul>
-        <!-- Trocar pelo link de checkout do produto Live no Dodo. -->
-        <a class="button primary disabled" href="#" aria-disabled="true">Buy MacMixer — coming soon</a>
+        <a class="button primary disabled" href="#" aria-disabled="true">Buy MacMixer – $9.99 — coming soon</a>
+        <p class="try-first"><a href="#top">Not sure yet? Try it free for 7 days</a></p>
       </div>
       <p class="note">Payments are processed by Dodo Payments, our Merchant of Record, which handles sales tax and VAT.</p>
     </section>
 
     <section id="faq">
       <h2>FAQ</h2>
+      <details>
+        <summary>Why does macOS ask for audio permission?</summary>
+        <p>To change an app's volume, MacMixer routes that app's sound through its own volume control, and macOS requires your permission for that. The sound is processed in real time on your Mac. Nothing is recorded, stored or sent anywhere.</p>
+      </details>
+      <details>
+        <summary>Is MacMixer safe?</summary>
+        <p>Yes. It's signed and notarized by Apple, uses Apple's own audio APIs and installs no drivers or system extensions. There's no account, and your audio never leaves your Mac.</p>
+      </details>
       <details>
         <summary>How does the free trial work?</summary>
         <p>Download MacMixer and use every feature for 7 days, no payment details needed. When the trial ends, the app stops adjusting volumes and all sound goes back to normal until you activate a license.</p>
@@ -88,16 +160,24 @@
         <p>After you buy, your license key arrives by email. Open MacMixer › Settings › License, paste the key and click Activate. You can deactivate it on one Mac to move it to another.</p>
       </details>
       <details>
-        <summary>Which permissions does MacMixer need?</summary>
-        <p>macOS asks for Audio Recording permission the first time you change a volume. MacMixer needs it to route each app's sound through its own volume control. Nothing is recorded or stored.</p>
+        <summary>Do I need the browser extension?</summary>
+        <p>No. Without it, MacMixer controls each browser as a whole. With it, every tab gets its own slider. In Safari, the extension comes with the app; in Chrome and Arc, it takes about a minute to load in developer mode, with the steps in MacMixer › Settings.</p>
       </details>
       <details>
-        <summary>Do I need the browser extension?</summary>
-        <p>No. Without it, MacMixer controls each browser as a whole. With it, every tab gets its own slider. Install it from MacMixer › Settings.</p>
+        <summary>How is it different from SoundSource?</summary>
+        <p>SoundSource is a powerful pro tool with effects, EQ, volume boost and per-app output devices. MacMixer does one thing: simple volume control for each app and each browser tab, for $9.99. If you need EQ and audio routing, SoundSource is excellent; if you just want to turn things down, MacMixer is lighter and cheaper.</p>
+      </details>
+      <details>
+        <summary>There are free alternatives. Why pay?</summary>
+        <p>Some free tools are great. MacMixer adds per-tab volume for Chrome, Arc and Safari, works without installing a virtual audio driver, remembers each app's level and gets automatic updates. Try it free for 7 days and decide.</p>
       </details>
       <details>
         <summary>Does it work offline?</summary>
         <p>Yes. MacMixer checks your license once a day when you're online, and keeps working for up to 30 days without a connection.</p>
+      </details>
+      <details>
+        <summary>Which languages does it support?</summary>
+        <p>MacMixer is available in English, Portuguese and Spanish, and follows your Mac's language.</p>
       </details>
       <details>
         <summary>Can I get a refund?</summary>
@@ -106,7 +186,7 @@
     </section>
 
     <footer>
-      <span>© 2026 MacMixer · <a href="mailto:macmixer.app@gmail.com">macmixer.app@gmail.com</a></span>
+      <span>© 2026 MacMixer · Made by an independent developer in Brazil. · <a href="mailto:macmixer.app@gmail.com">macmixer.app@gmail.com</a></span>
       <nav>
         <a href="terms.html">Terms</a>
         <a href="privacy.html">Privacy</a>
@@ -114,5 +194,12 @@
       </nav>
     </footer>
   </div>
+  <script>
+    document.querySelectorAll("nav.lang a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        try { localStorage.setItem("lang", link.dataset.lang); } catch (e) {}
+      });
+    });
+  </script>
 </body>
 </html>
